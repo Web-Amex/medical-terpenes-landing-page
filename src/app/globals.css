@@ -28,10 +28,11 @@ button {
 }
 
 .loud-bg {
-  background:
-    radial-gradient(120% 70% at 22% 14%, #102843 0%, transparent 52%),
-    radial-gradient(75% 70% at 92% 90%, #0a2038 0%, transparent 60%),
-    #061425;
+  background: #101820;
+  /*background:*/
+  /*  radial-gradient(120% 70% at 22% 14%, #102843 0%, transparent 52%),*/
+  /*  radial-gradient(75% 70% at 92% 90%, #0a2038 0%, transparent 60%),*/
+  /*  #061425;*/
 }
 
 .section-light {
@@ -103,6 +104,34 @@ button {
   width: 100%;
   margin-inline: auto;
   overflow: hidden;
+}
+
+/*Main Buttons White*/
+.main-button-white {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  margin: 0;
+  border: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: 1;
+  color: #101820;
+  background-color: #ffffff;
+  text-decoration: none;
+}
+
+.main-button-white:hover {
+  color: #ffffff;
+  background: linear-gradient(
+          90deg,
+          #ffffff -85.83%,
+          #dddae8 -51.55%,
+          #c0aee7 0.77%,
+          #0077c8 56.7%,
+          #101820 100%
+  );
 }
 
 @media (min-width: 768px) {

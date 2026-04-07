@@ -1,13 +1,14 @@
 import Image from "next/image";
-import Link from "next/link";
+import TransitionAnimation from "@/components/TransitionAnimation";
+import CommonWhiteButton from "@/components/CommonWhiteButton";
 
 export default function Home() {
   return (
     <main>
       <section className="loud-bg">
         <div className="container">
-          <div className="px-6 pb-23 pt-7 md:px-10 md:pb-57.5 md:pt-6">
-            <header className="flex items-center justify-between">
+          <div className="relative h-[60vh] px-6 md:px-10">
+            <header className="absolute top-7 right-6 left-6 z-10 flex items-center justify-between md:top-6 md:right-10 md:left-10">
               <Image
                   src="/ls-logo-1.svg"
                   alt="Loud Spectrum"
@@ -16,45 +17,52 @@ export default function Home() {
                   className="h-auto w-30 md:w-57.5"
                   priority
               />
-              <Link href="https://loudspectrum.com/">
-                <button  className="hero-button rounded-full bg-white px-5 py-1.5 text-[8px] font-semibold tracking-[0.18em] text-[#0a1a2c] uppercase md:px-11 md:py-3 md:text-[15px]">
-                  Explore Site
-                </button>
-              </Link>
+              <CommonWhiteButton
+                href="https://loudspectrum.com/"
+                className="px-5 py-1.5 text-[10px]! font-normal! tracking-[0.18em] whitespace-nowrap uppercase md:px-11 md:py-3 md:!text-[13px]"
+              >
+                Explore Site
+              </CommonWhiteButton>
             </header>
-
-            <div className="mx-auto mt-16 w-full max-w-81.5 md:mt-42.5 md:max-w-217.5">
-              <h5 className="text-[20px] tracking-[0.03em] text-[#f2f5fa] md:text-[46px] font-semibold">
-                MEDICAL TERPENES <span className="text-white/45 font-light">IS NOW</span>
-              </h5>
-              <div className="mt-4">
-                <Image
-                    src="/ls-logo-2-big.svg"
-                    alt="Loud Spectrum"
-                    width={326}
-                    height={65}
-                    className="h-auto w-81.5 md:hidden"
-                />
-                <Image
-                    src="/ls-logo-2-big.svg"
-                    alt="Loud Spectrum"
-                    width={734}
-                    height={146}
-                    className="hidden h-auto w-183.5 md:block"
-                />
-              </div>
-              <p className="mt-6 text-[16px] leading-[1.35] text-[#9cb0c6] md:mt-2 md:text-[20px]">
-                Quality Terpene Profiles that Hit Different. At Loud Spectrum, our terpene
-                lab is where nature, chemistry, and the senses converge. Since 2015,
-                we&apos;ve been sourcing curated natural ingredients and applying expert
-                formulation science to create unforgettable end-user sensory experiences.
-              </p>
-              <Link href="https://loudspectrum.com/">
-                <button className="pill-button mt-10 w-full rounded-full bg-[#f5f7fb] py-2 text-[16px] font-light tracking-[0.12em] text-[#0a1b2e] uppercase md:mt-20 md:py-3 md:text-[34px]">
-                  Explore Our New Site
-                </button>
-              </Link>
+          </div>
+        </div>
+        <TransitionAnimation
+          containerClassName="h-[40vh]"
+          rowClassName="h-[12.5%]"
+        />
+        <div className="absolute inset-0 flex items-center justify-center px-6 md:px-10">
+          <div className="mx-auto flex w-full max-w-81.5 flex-col items-center text-center md:max-w-217.5">
+            <h5 className="text-center text-[20px] font-semibold tracking-[0.03em] text-[#f2f5fa] md:text-[46px]">
+              MEDICAL TERPENES <span className="font-light text-white/45">IS NOW</span>
+            </h5>
+            <div className="mt-4 flex justify-center">
+              <Image
+                  src="/ls-logo-2-big.svg"
+                  alt="Loud Spectrum"
+                  width={326}
+                  height={65}
+                  className="h-auto w-81.5 md:hidden"
+              />
+              <Image
+                  src="/ls-logo-2-big.svg"
+                  alt="Loud Spectrum"
+                  width={734}
+                  height={146}
+                  className="hidden h-auto w-183.5 md:block"
+              />
             </div>
+            <p className="mx-auto my-10 text-center text-[16px] leading-[1.35] text-[#9cb0c6] md:max-w-[910px] md:text-[20px]">
+              Quality Terpene Profiles that Hit Different. At Loud Spectrum, our terpene
+              lab is where nature, chemistry, and the senses converge. Since 2015,
+              we&apos;ve been sourcing curated natural ingredients and applying expert
+              formulation science to create unforgettable end-user sensory experiences.
+            </p>
+              <CommonWhiteButton
+                href="https://loudspectrum.com/"
+                className="pill-button mx-auto px-5 py-3 text-[16px] font-light tracking-[0.12em] whitespace-nowrap uppercase md:mt-12 md:px-14 md:py-5 md:text-[20px]"
+              >
+                Explore Our New Site
+              </CommonWhiteButton>
           </div>
         </div>
       </section>
@@ -113,7 +121,7 @@ export default function Home() {
                 />
               </div>
 
-              <p className="w-full md:max-w-[80%] md:text-center mx-auto my-10 md:my-20 text-[16px] leading-[1.35] text-[#8ea3ba] md:text-[20px]">
+              <p className="w-full md:max-w-[80%] md:text-center mx-auto my-10 text-[16px] leading-[1.35] text-[#8ea3ba] md:text-[20px]">
                 Our lab advantage lies in the development of terpene profiles engineered to express aroma,
                 flavor, and effect with precision and intent. At the core of this work is our proprietary Flavor
                 Science process, where terpene interactions, volatility, and stability are analyzed to preserve
@@ -121,11 +129,14 @@ export default function Home() {
                 consumer-first mindset, ensuring every decision made in the lab translates into differentiated,
                 high-impact product experiences for consumers.
               </p>
-                <Link href="https://loudspectrum.com/">
-                  <button className=" w-full md:max-w-[60%] pill-button font-light mx-auto block rounded-full bg-[#f4f6fa] py-2 text-[16px] tracking-[0.12em] text-[#0a1b2e] uppercase md:mt-12 md:py-3 md:text-[20px]">
+                <div className="text-center">
+                  <CommonWhiteButton
+                    href="https://loudspectrum.com/"
+                    className="pill-button mx-auto px-5 py-3 text-[16px] font-light tracking-[0.12em] whitespace-nowrap uppercase md:mt-12 md:px-14 md:py-5 md:text-[20px]"
+                  >
                     Explore Our New Site
-                  </button>
-                </Link>
+                  </CommonWhiteButton>
+                </div>
             </div>
           </div>
         </div>
